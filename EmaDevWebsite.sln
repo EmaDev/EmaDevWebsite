@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Web", "Web\Web.vcxproj", "{AB99BE4C-9C2C-4209-A20B-B703E576BD40}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmaDev", "EmaDev\EmaDev.vcxproj", "{1EA44750-58C2-40D0-8E20-63FD2E51AFDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB99BE4C-9C2C-4209-A20B-B703E576BD40}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB99BE4C-9C2C-4209-A20B-B703E576BD40}.Debug|Win32.Build.0 = Debug|Win32
+		{AB99BE4C-9C2C-4209-A20B-B703E576BD40}.Release|Win32.ActiveCfg = Release|Win32
+		{AB99BE4C-9C2C-4209-A20B-B703E576BD40}.Release|Win32.Build.0 = Release|Win32
+		{1EA44750-58C2-40D0-8E20-63FD2E51AFDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1EA44750-58C2-40D0-8E20-63FD2E51AFDC}.Debug|Win32.Build.0 = Debug|Win32
+		{1EA44750-58C2-40D0-8E20-63FD2E51AFDC}.Release|Win32.ActiveCfg = Release|Win32
+		{1EA44750-58C2-40D0-8E20-63FD2E51AFDC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
