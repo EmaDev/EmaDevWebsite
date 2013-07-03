@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Web", "Web\Web.vcxproj", "{AB99BE4C-9C2C-4209-A20B-B703E576BD40}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmaDev", "EmaDev\EmaDev.vcxproj", "{1EA44750-58C2-40D0-8E20-63FD2E51AFDC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB99BE4C-9C2C-4209-A20B-B703E576BD40} = {AB99BE4C-9C2C-4209-A20B-B703E576BD40}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
