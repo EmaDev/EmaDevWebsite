@@ -7,7 +7,7 @@ using namespace std;
 namespace Web
 {
 
-	enum CONDITION_OP { OP_UNDEFINED, OP_EQ, OP_INEQ, OP_LT, OP_GT, OP_LET, OP_GET, OP_LIKE, OP_BETWEEN };
+	enum CONDITION_OP { OP_UNDEFINED, OP_EQ, OP_IN, OP_INEQ, OP_LT, OP_GT, OP_LET, OP_GET, OP_LIKE, OP_BETWEEN };
 	enum LOGICAL_OP { LOP_NULL, LOP_AND, LOP_OR };
 
 
@@ -71,6 +71,7 @@ namespace Web
 		Condition(var field);
 		~Condition();
 		ConditionList *equal(var value);
+		ConditionList *in(Select *s);
 		ConditionList *notEqual(var value);
 		ConditionList *like(var value);
 		ConditionList *greaterThan(var value);
@@ -104,6 +105,10 @@ namespace Web
 		T *equal(var value)
 		{
 			return (T*)Condition::equal(value);
+		}
+		T *in(Select *s)
+		{
+			return (T*)Condition::in(s);
 		}
 		T *notEqual(var value)
 		{

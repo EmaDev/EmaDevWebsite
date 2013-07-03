@@ -17,12 +17,22 @@ int main(int argc, char ** argv, char **envv)
 	{
 		Sql *sql = new Sql("budget2");
 		Select *s = sql->select();
-		s->value("budget_id")->value("azienda")->from("bu_budget")->order("budget_id", DESC);
+		//s->value("budget_id")->value("azienda")->from("bu_budget")->order("budget_id", DESC);
+
+		s->value("matricola")->value("budget_id")->value("azienda")
+		->from("bu_dipen")
+		->where("budget_id")->in(
+			(new Select(sql))->value("budget_id")->from("bu_budget")->where("budget_id")->equal(2)
+		);
+
+
+		dom->find("body")->append( "Eseguo query : " + s->getSql() );
+
 		s->exec();
 		while(s->fetch())
 		{
 			dom->find("body")->append(
-				(new Tag(P))->html("Budget id : " + s->get("budget_id") + " Azienda : " + s->get("azienda"))
+				(new Tag(P))->html("Matricola : " + s->get("matricola") + " Budget id : " + s->get("budget_id") + " Azienda : " + s->get("azienda"))
 			);
 		}
 	}

@@ -95,7 +95,7 @@ namespace Web
 			this->_type = value._type;
 			if(value._type == TYPE_STRING)
 				this->_value = new string(*(string *)value._value);
-			else
+			else if(this->_type != TYPE_UNDEFINED)
 			{
 				this->_value = (void *)malloc(sizeof(value._value)+1);
 				memcpy(this->_value, value._value, sizeof(value._value));
@@ -103,7 +103,8 @@ namespace Web
 		}
 		~var()
 		{
-			delete this->_value;
+			if(this->_type != TYPE_UNDEFINED)
+				delete this->_value;
 		}
 		var(string value)
 		{
@@ -150,7 +151,7 @@ namespace Web
 			this->_type = value._type;
 			if(value._type == TYPE_STRING)
 				this->_value = new string(*(string *)value._value);
-			else
+			else if(value._type != TYPE_UNDEFINED)
 			{	
 				this->_value = (void *)malloc(sizeof(value._value)+1);
 				memcpy(this->_value, value._value, sizeof(value._value)+1);

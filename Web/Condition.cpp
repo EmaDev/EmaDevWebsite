@@ -99,6 +99,11 @@ namespace Web
 		_initCond(OP_EQ, value);
 		return this->_parent;
 	}
+	ConditionList *Condition::in(Select *s)
+	{
+		_initCond(OP_IN, s->getSql());
+		return this->_parent;
+	}
 	ConditionList *Condition::notEqual(var value)
 	{
 		_initCond(OP_INEQ, value);
@@ -163,6 +168,9 @@ namespace Web
 			break;
 		case OP_EQ:
 			result += " = " + this->_value1.toSql();
+			break;
+		case OP_IN:
+			result += " IN ( " + this->_value1 + " )";
 			break;
 		case OP_INEQ:
 			result +=" != " + this->_value1.toSql();
