@@ -8,6 +8,12 @@ using namespace std;
 using namespace Web;
 
 
+void parsePage()
+{
+	
+}
+
+
 int main(int argc, char ** argv, char **envv)
 {
 	Server s = Server(envv);
@@ -26,6 +32,15 @@ int main(int argc, char ** argv, char **envv)
 		else
 		{
 			s.setRenderType(RENDER_HTML);
+		}
+
+		if(isJson)
+		{
+			
+		}
+		else
+		{
+			
 		}
 	
 	
