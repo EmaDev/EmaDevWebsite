@@ -216,6 +216,19 @@ namespace Web
 			}
 			return ris;
 		}
+		var replace(var find, var rep)
+		{
+			string ris = this->toS();
+			if(find.toS().empty())
+				return "";
+			size_t start_pos = 0;
+			while((start_pos = ris.find(find.toS(), start_pos)) != string::npos)
+			{
+				ris.replace(start_pos, find.toS().length(), rep.toS());
+				start_pos += rep.toS().length();
+			}
+			return ris;
+		}
 	private:
 		VAR_TYPES _type;
 		void *_value;

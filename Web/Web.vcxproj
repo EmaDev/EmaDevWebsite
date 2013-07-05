@@ -75,6 +75,7 @@
     <ClInclude Include="Condition.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="Dom.h" />
+    <ClInclude Include="Json.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="Query.h" />
@@ -93,6 +94,7 @@
     <ClCompile Include="Condition.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="Dom.cpp" />
+    <ClCompile Include="Json.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Order.cpp" />
     <ClCompile Include="Query.cpp" />

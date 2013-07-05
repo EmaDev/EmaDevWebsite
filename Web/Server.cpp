@@ -6,7 +6,7 @@ namespace Web
 	Server::Server(char **env)
 	{
 		this->html = new Dom();
-		//this->json = new Json();
+		this->json = new Json();
 		this->request = new Request(env);
 		this->response = new Response();
 		this->_renderType = RENDER_HTML;
@@ -15,7 +15,7 @@ namespace Web
 	Server::~Server()
 	{
 		delete this->html;
-		//delete this->json;
+		delete this->json;
 		delete this->request;
 		delete this->response;
 		delete this->_header;
@@ -67,5 +67,10 @@ namespace Web
 			//render = render + this->json->render();
 		}
 		return render;
+	}
+	Server *Server::initSql(var DSN)
+	{
+		this->sql = new Sql(DSN);
+		return this;
 	}
 }

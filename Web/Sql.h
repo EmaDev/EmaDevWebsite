@@ -12,7 +12,8 @@
 
 using namespace std;
 
-namespace Web{
+namespace Web
+{
 
 	class SqlException:public exception
 	{
@@ -25,7 +26,7 @@ namespace Web{
 		string _msg;
 		string _state;
 	};
-
+	 
 	class Sql
 	{
 		friend class Query;

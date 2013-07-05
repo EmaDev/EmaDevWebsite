@@ -13,103 +13,106 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="File di intestazione\List">
+    <Filter Include="File di origine\List">
       <UniqueIdentifier>{619f8bf6-7213-4fa9-a759-183cd123324a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Server">
+    <Filter Include="File di origine\Server">
       <UniqueIdentifier>{f1de968d-24da-4f5a-afaf-a88bceaa5a6c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Server\Dom">
+    <Filter Include="File di origine\Server\Dom">
       <UniqueIdentifier>{b58394c8-db9f-4cef-963f-04f685ae6e38}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Server\Json">
+    <Filter Include="File di origine\Server\Json">
       <UniqueIdentifier>{7a1baf2c-a414-42bd-b057-c91bafcc25d4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Server\Request">
+    <Filter Include="File di origine\Server\Request">
       <UniqueIdentifier>{6a25c1ca-81e5-45da-8816-554f8706e9bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Server\Response">
+    <Filter Include="File di origine\Server\Response">
       <UniqueIdentifier>{be6f5e9e-02ab-441d-84c6-e001e0de6884}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Server\Tag">
+    <Filter Include="File di origine\Server\Tag">
       <UniqueIdentifier>{d62a68fe-1bc7-420a-8847-ae91aae78e14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Sql">
+    <Filter Include="File di origine\Server\Tag\Attr">
+      <UniqueIdentifier>{1ac1597e-682f-4abd-b0d4-b4490fe37309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Sql">
       <UniqueIdentifier>{9ad59636-a0e9-418f-a535-12ab6aeb328d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Sql\Condition">
+    <Filter Include="File di origine\Sql\Condition">
       <UniqueIdentifier>{36d0e11a-4b9c-44cf-9980-6270f2197169}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Sql\Order">
+    <Filter Include="File di origine\Sql\Order">
       <UniqueIdentifier>{f15f32b9-2ad4-452d-873a-b8e7e00eeafd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Sql\Query">
+    <Filter Include="File di origine\Sql\Query">
       <UniqueIdentifier>{27e77d6f-1d4e-4666-ae60-31dfc12963d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Sql\Table">
+    <Filter Include="File di origine\Sql\Table">
       <UniqueIdentifier>{f77e6f1c-27a3-4e08-aa93-9be591fea1c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Sql\Values">
+    <Filter Include="File di origine\Sql\Values">
       <UniqueIdentifier>{c56b4f2d-8e51-44d0-bcf2-5a30ee7b6149}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Var">
+    <Filter Include="File di origine\Var">
       <UniqueIdentifier>{9bd11a73-6844-4171-9926-0253c5ae28e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="File di intestazione\Var\Data">
+    <Filter Include="File di origine\Var\Data">
       <UniqueIdentifier>{221ec664-a21d-4a96-a414-52ca8cb26643}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="File di intestazione\Server\Tag\Attr">
-      <UniqueIdentifier>{1ac1597e-682f-4abd-b0d4-b4490fe37309}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Web.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
-      <Filter>File di intestazione\List</Filter>
+      <Filter>File di origine\List</Filter>
     </ClInclude>
     <ClInclude Include="Dom.h">
-      <Filter>File di intestazione\Server\Dom</Filter>
+      <Filter>File di origine\Server\Dom</Filter>
     </ClInclude>
     <ClInclude Include="Request.h">
-      <Filter>File di intestazione\Server\Request</Filter>
+      <Filter>File di origine\Server\Request</Filter>
     </ClInclude>
     <ClInclude Include="Response.h">
-      <Filter>File di intestazione\Server\Response</Filter>
+      <Filter>File di origine\Server\Response</Filter>
     </ClInclude>
     <ClInclude Include="Tag.h">
-      <Filter>File di intestazione\Server\Tag</Filter>
+      <Filter>File di origine\Server\Tag</Filter>
     </ClInclude>
     <ClInclude Include="Server.h">
-      <Filter>File di intestazione\Server</Filter>
+      <Filter>File di origine\Server</Filter>
     </ClInclude>
     <ClInclude Include="Condition.h">
-      <Filter>File di intestazione\Sql\Condition</Filter>
+      <Filter>File di origine\Sql\Condition</Filter>
     </ClInclude>
     <ClInclude Include="Order.h">
-      <Filter>File di intestazione\Sql\Order</Filter>
+      <Filter>File di origine\Sql\Order</Filter>
     </ClInclude>
     <ClInclude Include="Query.h">
-      <Filter>File di intestazione\Sql\Query</Filter>
+      <Filter>File di origine\Sql\Query</Filter>
     </ClInclude>
     <ClInclude Include="Table.h">
-      <Filter>File di intestazione\Sql\Table</Filter>
+      <Filter>File di origine\Sql\Table</Filter>
     </ClInclude>
     <ClInclude Include="SqlValue.h">
-      <Filter>File di intestazione\Sql\Values</Filter>
+      <Filter>File di origine\Sql\Values</Filter>
     </ClInclude>
     <ClInclude Include="Sql.h">
-      <Filter>File di intestazione\Sql</Filter>
+      <Filter>File di origine\Sql</Filter>
     </ClInclude>
     <ClInclude Include="Data.h">
-      <Filter>File di intestazione\Var\Data</Filter>
+      <Filter>File di origine\Var\Data</Filter>
     </ClInclude>
     <ClInclude Include="Attr.h">
-      <Filter>File di intestazione\Server\Tag\Attr</Filter>
+      <Filter>File di origine\Server\Tag\Attr</Filter>
     </ClInclude>
     <ClInclude Include="Var.h">
-      <Filter>File di intestazione\Var</Filter>
+      <Filter>File di origine\Var</Filter>
+    </ClInclude>
+    <ClInclude Include="Json.h">
+      <Filter>File di origine\Server\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Web.h">
+      <Filter>File di origine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -117,49 +120,52 @@
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
-      <Filter>File di intestazione\List</Filter>
+      <Filter>File di origine\List</Filter>
     </ClCompile>
     <ClCompile Include="Dom.cpp">
-      <Filter>File di intestazione\Server\Dom</Filter>
+      <Filter>File di origine\Server\Dom</Filter>
     </ClCompile>
     <ClCompile Include="Request.cpp">
-      <Filter>File di intestazione\Server\Request</Filter>
+      <Filter>File di origine\Server\Request</Filter>
     </ClCompile>
     <ClCompile Include="Response.cpp">
-      <Filter>File di intestazione\Server\Response</Filter>
+      <Filter>File di origine\Server\Response</Filter>
     </ClCompile>
     <ClCompile Include="Tag.cpp">
-      <Filter>File di intestazione\Server\Tag</Filter>
+      <Filter>File di origine\Server\Tag</Filter>
     </ClCompile>
     <ClCompile Include="Server.cpp">
-      <Filter>File di intestazione\Server</Filter>
+      <Filter>File di origine\Server</Filter>
     </ClCompile>
     <ClCompile Include="Condition.cpp">
-      <Filter>File di intestazione\Sql\Condition</Filter>
+      <Filter>File di origine\Sql\Condition</Filter>
     </ClCompile>
     <ClCompile Include="Order.cpp">
-      <Filter>File di intestazione\Sql\Order</Filter>
+      <Filter>File di origine\Sql\Order</Filter>
     </ClCompile>
     <ClCompile Include="Query.cpp">
-      <Filter>File di intestazione\Sql\Query</Filter>
+      <Filter>File di origine\Sql\Query</Filter>
     </ClCompile>
     <ClCompile Include="Table.cpp">
-      <Filter>File di intestazione\Sql\Table</Filter>
+      <Filter>File di origine\Sql\Table</Filter>
     </ClCompile>
     <ClCompile Include="SqlValue.cpp">
-      <Filter>File di intestazione\Sql\Values</Filter>
+      <Filter>File di origine\Sql\Values</Filter>
     </ClCompile>
     <ClCompile Include="Sql.cpp">
-      <Filter>File di intestazione\Sql</Filter>
+      <Filter>File di origine\Sql</Filter>
     </ClCompile>
     <ClCompile Include="Data.cpp">
-      <Filter>File di intestazione\Var\Data</Filter>
+      <Filter>File di origine\Var\Data</Filter>
     </ClCompile>
     <ClCompile Include="Var.cpp">
-      <Filter>File di intestazione\Var</Filter>
+      <Filter>File di origine\Var</Filter>
     </ClCompile>
     <ClCompile Include="Attr.cpp">
-      <Filter>File di intestazione\Server\Tag\Attr</Filter>
+      <Filter>File di origine\Server\Tag\Attr</Filter>
+    </ClCompile>
+    <ClCompile Include="Json.cpp">
+      <Filter>File di origine\Server\Json</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

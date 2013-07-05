@@ -19,9 +19,11 @@ namespace Web
 		Server *addHeader(var name, var value);
 		Server *setDefaultHeader(RenderType renderType);
 		Dom *html;
-		//Json *json;
+		Json *json;
 		Request *request;
 		Response *response;
+		Sql *sql;
+		Server *initSql(var DSN);
 	private:
 		AttrList *_header;
 		RenderType _renderType;
