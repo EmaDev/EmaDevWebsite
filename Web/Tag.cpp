@@ -15,9 +15,32 @@ namespace Web
 		"link",
 		"script",
 		"span",
+		"header",
+		"h1",
+		"h2",
+		"h3",
+		"h4",
+		"h5",
+		"h6",
+		"form",
+		"fieldset",
+		"legend",
+		"table",
+		"tbody",
+		"thead",
+		"tfoot",
+		"tr",
+		"th",
+		"td",
+		"label",
+		"select",
+		"option",
 		"", // TAG_DELIMITER_INLINE
 		"img",
 		"canvas",
+		"meta",
+		"hr",
+		"input",
 		"", // TAG_DELIMITER_SPECIAL
 		"",
 		""
@@ -186,8 +209,9 @@ namespace Web
 		{
 			for(unsigned i = 0; i < this->_children.size(); i++)
 			{
-				if(this->_children.at(i)->_attrList.find(attr, value) != NULL)
-					return this->_children.at(i);
+				Tag *tmp = this->_children.at(i)->find(attr, value);
+				if(tmp != NULL)
+					return tmp;
 			}
 		}
 		return NULL;
@@ -209,11 +233,12 @@ namespace Web
 		{
 			if(this->_children.size() > 0)
 			{
-				for(unsigned i = this->_children.size()-1; i >= 0; i--)
+				for(unsigned i = 0; i < this->_children.size(); i++)
 				{
 					delete this->_children.at(i);
 				}
 			}
+			this->_children.clear();
 		}
 	}
 

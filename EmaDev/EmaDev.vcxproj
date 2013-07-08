@@ -84,7 +84,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="anagrafica.cpp" />
+    <ClCompile Include="graphic.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pages.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="anagrafica.h" />
+    <ClInclude Include="graphic.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="pages.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

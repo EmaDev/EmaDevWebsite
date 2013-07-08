@@ -41,7 +41,7 @@ namespace Web
 		switch(renderType)
 		{
 		case RENDER_HTML:
-			this->_header->push("Content-Type","text/html; charset=UTF-8");
+			this->_header->push("Content-Type","text/html; charset=iso-8859-1");
 			break;
 		case RENDER_JSON:
 			this->_header->push("Content-Type","application/json");
@@ -64,7 +64,7 @@ namespace Web
 		}
 		else if(this->_renderType == RENDER_JSON)
 		{
-			//render = render + this->json->render();
+			render = render + this->json->render();
 		}
 		return render;
 	}

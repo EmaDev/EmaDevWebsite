@@ -16,7 +16,6 @@ namespace Web
 	}
 	SqlException::~SqlException()
 	{
-	
 	}
 	string SqlException::message()
 	{
@@ -55,7 +54,6 @@ namespace Web
 					SQL_DRIVER_NOPROMPT))
 		{
 			case SQL_SUCCESS_WITH_INFO:
-				break;
 			case SQL_SUCCESS:
 				break;
 			default:
@@ -77,19 +75,42 @@ namespace Web
 
 		SQLNumResultCols(this->_state, &this->_columnsCount);
 
- 		/*if( !this->_manageErrors(SQLGetDescField(hdesc,NULL,SQL_DESC_COUNT,&this->_columnsCount,NULL,NULL)))
-		{
-			this->_throwError(SQL_HANDLE_STMT, this->_state);
-		}*/
 
+		SQLGetStmtAttr(this->_state,SQL_ATTR_IMP_ROW_DESC,&this->_desc,NULL,NULL);
+		
+
+		for(unsigned i = 1; i <= this->_columnsCount; i++)
+		{
+			SqlField *field = new SqlField;
+			if( !this->_manageErrors(SQLGetDescField(this->_desc,i,SQL_DESC_TYPE,&field->type,NULL,NULL)))
+			{
+				this->_throwError(SQL_HANDLE_STMT, this->_state);
+			}
+			char fieldName[255] = "";
+			if( !this->_manageErrors(SQLGetDescField(this->_desc,i,SQL_DESC_NAME,&fieldName,256,NULL)))
+			{
+				this->_throwError(SQL_HANDLE_STMT, this->_state);
+			}
+			field->name = fieldName;
+			if( !this->_manageErrors(SQLGetDescField(this->_desc,i,SQL_DESC_LENGTH,&field->size,NULL,NULL)))
+			{
+				this->_throwError(SQL_HANDLE_STMT, this->_state);
+			}
+			field->buffer = new char[field->size + 1];
+			SQLINTEGER indicator;
+
+			SQLBindCol(this->_state, i,SQL_C_DEFAULT, field->buffer,field->size + 1, &indicator);
+			this->_fields.append(field);
+		}
 
 	}
 	bool Sql::_fetch()
 	{
-		this->_fields.clear();
-		if(SQLFetch(this->_state)==SQL_SUCCESS)
+		for(unsigned i = 0; i < this->_columnsCount; i++)
+			memset(this->_fields.at(i)->buffer,'\0', this->_fields.at(i)->size + 1);
+		if(SQLFetch(this->_state) == SQL_SUCCESS)
 		{
-			char fieldName[128 + 1] = "";
+			/*char fieldName[128 + 1] = "";
 			var fieldValue;
 			SQLSMALLINT fieldType = 0;
 
@@ -107,7 +128,7 @@ namespace Web
 				}
 				fieldValue = this->_extactValue(fieldType, i);
 				this->_fields.add(fieldName, fieldValue);
-			}
+			}*/
 			return true;
 		}
 		else
@@ -115,7 +136,15 @@ namespace Web
 	}
 	var Sql::_get(var field)
 	{
-		return this->_fields.find(field);
+		for(unsigned i = 0; i < this->_fields.size(); i++)
+		{
+			if(this->_fields.at(i)->name == field)
+			{
+				char *ris = (char *)this->_fields.at(i)->buffer;
+ 				return ris;
+			}
+		}
+		//return this->_fields.find(field);
 		/*SQLGetStmtAttr(this->_state,SQL_ATTR_IMP_ROW_DESC,&this->_desc,NULL,NULL);
 
 		char fieldName[128 + 1] = "";
@@ -165,14 +194,18 @@ namespace Web
 			ris = "Nedd to test type : Longvarchar";
 			break;
 		case SQL_WCHAR:
-			ris = "Nedd to test type : Wchar";
-			break;
 		case SQL_WVARCHAR:
-			ris = "Nedd to test type : Wvarchar";
-			break;
 		case SQL_WLONGVARCHAR:
-			ris = "Nedd to test type : Wlongvarchar";
+		{
+			wchar_t prova[] = L"CIAO";
+			wchar_t prova2[1000] = L"CIAO";
+			bufferValue = new wchar_t[int(valueLen) + 8	];
+			
+			if(this->_extactValue(0, index, &prova2, 1001))
+			{}
+			//ris = *(new string(*(UINT16 *)bufferValue));
 			break;
+		}
 		case SQL_DECIMAL:
 			ris = "Nedd to test type : Decimal";
 			break;
@@ -322,6 +355,11 @@ namespace Web
 	}
 	Sql::~Sql()
 	{
+		
+		for(unsigned i = 0; i < this->_fields.size(); i++)
+		{
+			delete this->_fields.at(i);
+		}
 		this->disconnect();
 	}
 	Select* Sql::select()

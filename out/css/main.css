@@ -1,0 +1,125 @@
+html, body, #wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+body {
+	background: #FAFAFA;
+	font-size: 14px;
+}
+#wrapper{
+	min-width: 1024px;
+}
+#header{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 80px;
+	background: #FFF;
+	border-bottom: solid 1px #CECECE;
+	overflow: hidden;
+}
+#header-content
+{
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.44);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.44);
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.44);
+	background: #EEE;
+	height: 100%;
+}
+#logo{
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+#version-box, #box-user-info{
+	position: absolute;
+	right: 9px;
+	top: 9px;
+	height: 26px;
+	width: auto;
+	padding: 0 10px;
+	line-height: 26px;
+	font-size: 10px;
+}
+#box-user-info{
+	top: 44px;
+}
+.inset-box{
+	background: #FAFAFA;
+	border: solid 1px #CECECE;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0px -2px 6px 0px rgba(190, 190, 190, 0.47);
+	-moz-box-shadow: inset 0px -2px 6px 0px rgba(190, 190, 190, 0.47);
+     box-shadow: inset 0px -2px 6px 0px rgba(190, 190, 190, 0.47);
+}
+#logout{
+	position: relative;
+	float: right;
+	display: block;
+	top: 50%;
+	margin-top: -6px;
+	cursor: pointer;
+}
+#logout:hover {
+	opacity: 0.5;
+}
+#user-info{
+	position: relative;
+	height: 100%;
+	width: auto;
+	padding: 0 10px;
+	margin-right: 9px;
+	float: right;
+	display: block;
+}
+.wrapper-center{
+	position: relative;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	max-width: 1024px;
+}
+h3+hr
+{
+	margin-top: -1em;
+	border: solid 1px #FFF;
+	border-top-color: rgba(119, 119, 119, 0.23);
+}
+#page{
+	padding: 20px;
+}
+legend{
+	font-weight: bold;
+	padding: 0 5px;
+}
+input,textarea, select, .search-box-content-text, .result-box{
+	border: 1px solid #ddd;
+	background: #fcfcfc;
+	padding:2px 5px;
+}
+select
+{
+	padding-right:2px;
+}
+*:focus{
+    outline-color: #0087BB;
+}
+td {
+	padding: 2px 5px;
+}
+form{
+	float: left;
+}
+.title{
+	font-weight: bold;
+	color: #116094;
+}
+body * {
+	vertical-align: middle;
+}
+select {
+	max-width: 150px;
+}

@@ -1,49 +1,49 @@
-#include <iostream>
-#include <stdio.h>
-#include <string>
+#include "main.h"
 
-#include "Web.h"
+Server *server;
+Dom *dom;
+Json *json;
 
-using namespace std;
-using namespace Web;
-
-
-void parsePage()
+static void debug(int timeout)
 {
-	
+	timeout *= 1000;
+	timeout += clock(); 
+	while(clock() < timeout)
+		continue;				// BREAKPOINT HERE FOR DEBUG
 }
-
 
 int main(int argc, char ** argv, char **envv)
 {
 	Server s = Server(envv);
-	Dom *dom = s.html;
-	Json *json = s.json;
+	server = &s;
+	dom = server->html;
+	json = server->json;
+
+	if(server->request->get("debug") == 1) debug(20);
 
 	bool isJson = false;
 	try
 	{
-		s.initSql("budget2");
-		if(s.request->get("json") == 1)
+		server->initSql("budget2");
+		if(server->request->get("json") == 1)
 		{
-			s.setRenderType(RENDER_JSON);
+			server->setRenderType(RENDER_JSON);
 			isJson = true;
 		}
 		else
 		{
-			s.setRenderType(RENDER_HTML);
+			server->setRenderType(RENDER_HTML);
+			graphicInit();
 		}
 
 		if(isJson)
 		{
-			
+			parseJsonPage();
 		}
 		else
 		{
-			
+			parseHtmlPage();
 		}
-	
-	
 	}
 	catch(SqlException &ex)
 	{
@@ -57,7 +57,7 @@ int main(int argc, char ** argv, char **envv)
 		}
 	}
 
-	cout<<s.render();
+	cout<<server->render();
 
 	return 0;
 }

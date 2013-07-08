@@ -193,6 +193,10 @@ namespace Web
 		}
 		string toS();
 		const char* toC();
+		bool exist()
+		{
+			return this->_type != TYPE_UNDEFINED;
+		}
 		var toSql()
 		{
 			var ris = "";

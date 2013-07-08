@@ -27,6 +27,20 @@ namespace Web
 		string _state;
 	};
 	 
+
+
+
+	class SqlField
+	{
+	public:
+		var name;
+		SQLSMALLINT type;
+		long size;
+		void *buffer;
+	};
+
+
+
 	class Sql
 	{
 		friend class Query;
@@ -43,7 +57,7 @@ namespace Web
 		bool _fetch();
 		var _get(var value);
 	private:
-		Dictionary _fields;
+		List<SqlField *> _fields;
 		var _extactValue(SQLSMALLINT fieldType, int index);
 		bool _extactValue(SQLSMALLINT fieldType,int index, void *ris, SQLSMALLINT size);
 		SQLSMALLINT _columnsCount;
